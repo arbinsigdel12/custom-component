@@ -1,0 +1,48 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 20px;
+  &__button {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+
+    &__commonButton {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+
+    .custom__accordion {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 24px;
+      color: red;
+      &__header {
+        background-color: bisque;
+        &:hover {
+          background-color: rgb(227, 201, 169);
+        }
+      }
+    }
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__commonInput {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

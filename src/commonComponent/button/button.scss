@@ -1,0 +1,52 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+
+  &--primary {
+    background-color: #067af5;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  &--secondary {
+    background-color: #6c757d;
+
+    &:hover {
+      background-color: #545b62;
+    }
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  &--loading {
+    cursor: progress;
+
+    .loading__icon {
+      animation: spin 1s linear infinite;
+      font-size: 18px;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
