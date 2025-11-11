@@ -19,11 +19,39 @@
     border-radius: 5px;
     &.input--error {
       border-color: red;
+      outline: none;
+
+      &:focus {
+        border-color: red;
+      }
     }
   }
 
   &__error {
     color: red;
     font-size: 14px;
+  }
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &__label {
+    font-weight: bold;
+    span {
+      color: red;
+    }
+  }
+  &__options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    .radio__option {
+      display: flex;
+      justify-content: flex-start;
+      gap: 5px;
+      align-items: center;
+    }
   }
 }

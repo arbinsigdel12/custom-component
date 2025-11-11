@@ -1,0 +1,86 @@
+.form {
+  border: 5px solid #75afe6;
+  border-radius: 10px;
+  width: 450px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h2 {
+    display: inline-block;
+    background-image: linear-gradient(
+      45deg,
+      rgba(121, 160, 219, 1) 30%,
+      rgba(150, 103, 191, 1) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 5% 3px;
+    background-position: 0 100%;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  &__inputField {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+
+    &__nameField {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__emailField {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__passwordField {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__radioField {
+      display: flex;
+      flex-direction: column;
+      p {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      &__radioOptions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+
+        .input {
+          display: flex;
+          align-items: center;
+          flex-direction: row-reverse;
+          &__inputField {
+            line-height: 0;
+            color: #ddd;
+            outline: none;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  &__buttons {
+    margin-top: 20px;
+    width: 100%;
+
+    .submitButton {
+      width: 100%;
+      background: #79a0db;
+      background: linear-gradient(
+        45deg,
+        rgba(121, 160, 219, 1) 30%,
+        rgba(150, 103, 191, 1) 100%
+      );
+    }
+  }
+}

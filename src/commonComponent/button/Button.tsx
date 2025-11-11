@@ -11,6 +11,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   labelAppend?: React.ReactNode;
   isloading?: boolean;
   loaderType?: LoaderType;
+  buttonClassname?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,13 +19,14 @@ const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   labelAppend,
   labelPrepend,
-  isloading,
+  isloading = false,
   loaderType,
+  buttonClassname = "",
   ...defaultAttribute
 }) => {
   const buttonClass = `button button--${variant}${
     isloading ? " button--loading" : ""
-  }`;
+  } ${buttonClassname}`.trim();
 
   return (
     <button className={buttonClass} {...defaultAttribute}>

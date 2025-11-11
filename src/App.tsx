@@ -4,6 +4,7 @@ import Accordion from "./commonComponent/accordion/Accordion";
 import { FaArrowRight } from "react-icons/fa";
 import { accordionData, customAccordionData } from "./data/accordionData";
 import Input from "./commonComponent/input/Input";
+import Form from "./commonComponent/form/Form";
 
 function App() {
   return (
@@ -49,34 +50,37 @@ function App() {
         <div className="app__input__commonInput">
           <Input
             id="rf"
-            label="Normal required Feild"
+            label="Normal required Field"
             placeholder="Enter Name"
             type="text"
-            isrequired={true}
+            required={true}
           />
           <Input
             id="nrf"
-            label="Not required Feild"
+            label="Not required Field"
             placeholder="Enter Email"
             type="email"
-            isrequired={false}
+            required={false}
           />
           <Input
             id="nf"
             label="Number Field"
             placeholder="Enter Number"
             type="number"
-            isrequired={true}
+            required={true}
           />
           <Input
             id="ef"
-            label="Error feild shown"
+            label="Error Field shown"
             placeholder="Enter Email"
             type="email"
-            isrequired={true}
+            required={true}
             errorMessage="Not a email address"
           />
         </div>
+      </div>
+      <div className="app__form">
+        <Form />
       </div>
     </div>
   );
