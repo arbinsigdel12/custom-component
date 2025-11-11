@@ -1,0 +1,36 @@
+.dropdown {
+  display: inline-block;
+
+  &__trigger {
+    cursor: pointer;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  button {
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+  }
+}

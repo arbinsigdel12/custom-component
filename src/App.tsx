@@ -1,12 +1,14 @@
 import "./App.scss";
 import Button from "./commonComponent/button/Button";
 import Accordion from "./commonComponent/accordion/Accordion";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaUserCircle } from "react-icons/fa";
 import { accordionData, customAccordionData } from "./data/accordionData";
 import Input from "./commonComponent/input/Input";
 import Form from "./commonComponent/form/Form";
 import Tabs from "./commonComponent/tabs/Tabs";
 import { tabItems } from "./data/tabsData";
+import Dropdown from "./commonComponent/dropdown/Dropdown";
+import { menuItems } from "./commonComponent/dropdown/DropdownItem";
 
 function App() {
   return (
@@ -105,6 +107,18 @@ function App() {
           tabs={tabItems}
           defaultActiveTab={"home"}
           tabContentClassName="classContent"
+        />
+      </div>
+      <div className="app__dropdown">
+        <h2>Dropdown Component</h2>
+        <Dropdown
+          trigger={
+            <div className="dropdownTrigger">
+              <FaUserCircle size={32} />
+              <span>View Dropdown</span>
+            </div>
+          }
+          items={menuItems}
         />
       </div>
     </div>
