@@ -45,4 +45,27 @@
       justify-content: space-between;
     }
   }
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .tabs__tab__button.classHeader {
+      color: red;
+      background-color: #ffe4e1;
+
+      &:hover {
+        background-color: #ffdad3;
+      }
+      &.tabs__tab__button--active {
+        color: green;
+      }
+    }
+    .tabs__content.classContent {
+      color: red;
+      p {
+        color: blue;
+      }
+    }
+  }
 }

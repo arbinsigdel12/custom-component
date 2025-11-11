@@ -5,6 +5,8 @@ import { FaArrowRight } from "react-icons/fa";
 import { accordionData, customAccordionData } from "./data/accordionData";
 import Input from "./commonComponent/input/Input";
 import Form from "./commonComponent/form/Form";
+import Tabs from "./commonComponent/tabs/Tabs";
+import { tabItems } from "./data/tabsData";
 
 function App() {
   return (
@@ -81,6 +83,23 @@ function App() {
       </div>
       <div className="app__form">
         <Form />
+      </div>
+      <div className="app__tab">
+        <h2>Common Tabs Component</h2>
+        <h2>Default tabs component</h2>
+        <Tabs tabs={tabItems} defaultActivetab="home" />
+        <h2>Tabs with Header style change</h2>
+        <Tabs
+          tabs={tabItems}
+          defaultActivetab="home"
+          tabHeaderClassName="classHeader"
+        />
+        <h2>Tabs with Content style change</h2>
+        <Tabs
+          tabs={tabItems}
+          defaultActivetab="home"
+          tabContentClassName="classContent"
+        />
       </div>
     </div>
   );
