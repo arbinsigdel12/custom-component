@@ -2,48 +2,60 @@ import React, { useState, type ReactNode, useEffect } from "react";
 import "./tabs.scss";
 
 export interface TabItem {
-  key: string;
-  label: string;
+  id: string;
+  label: ReactNode;
   content: ReactNode;
 }
 
 interface TabsProps {
   tabs: TabItem[];
-  defaultActivetab?: string;
+  defaultActiveTab?: number | string;
   tabHeaderClassName?: string;
   activeTabClassName?: string;
   tabContentClassName?: string;
+  rightComponent?: ReactNode;
 }
 
 const Tabs: React.FC<TabsProps> = ({
   tabs,
-  defaultActivetab,
+  defaultActiveTab = "",
   tabHeaderClassName = "",
   activeTabClassName = "",
   tabContentClassName = "",
+  rightComponent,
 }) => {
-  const [activeKey, setActiveKey] = useState<string>(
-    defaultActivetab || tabs[0]?.key
-  );
+  const getInitialIndex = () => {
+    if (typeof defaultActiveTab === "number") {
+      return defaultActiveTab;
+    }
+    const index = tabs.findIndex((tab) => tab.id === defaultActiveTab);
+    return index !== -1 ? index : 0;
+  };
+
+  const [activeIndex, setActiveIndex] = useState<number>(getInitialIndex());
 
   useEffect(() => {
-    if (defaultActivetab) setActiveKey(defaultActivetab);
-  }, [defaultActivetab]);
-
-  const handleTabClick = (key: string) => {
-    setActiveKey(key);
-  };
+    if (typeof defaultActiveTab === "number") {
+      setActiveIndex(defaultActiveTab);
+    } else {
+      const index = tabs.findIndex((tab) => tab.id === defaultActiveTab);
+      if (index !== -1) {
+        setActiveIndex(index);
+      }
+    }
+  }, [defaultActiveTab, tabs]);
 
   return (
     <div className="tabs">
       <div className="tabs__header">
         <div className="tabs__header__left">
-          {tabs.map((tab) => (
+          {tabs.map((tab, index) => (
             <button
-              key={tab.key}
-              onClick={() => handleTabClick(tab.key)}
+              key={tab.id}
+              type="button"
+              onClick={() => setActiveIndex(index)}
               className={`tabs__tab__button ${tabHeaderClassName} ${
-                activeKey === tab.key
+                index === activeIndex
                   ? `tabs__tab__button--active ${activeTabClassName}`
                   : ""
               }`}
@@ -52,17 +64,14 @@ const Tabs: React.FC<TabsProps> = ({
             </button>
           ))}
         </div>
+
+        {rightComponent && (
+          <div className="tabs__header__right">{rightComponent}</div>
+        )}
       </div>
 
       <div className={`tabs__content ${tabContentClassName}`}>
-        {tabs.map(
-          (tab) =>
-            activeKey === tab.key && (
-              <div key={tab.key} className="tabs__panel">
-                {tab.content}
-              </div>
-            )
-        )}
+        <div className="tabs__panel">{tabs[activeIndex]?.content}</div>
       </div>
     </div>
   );

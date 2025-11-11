@@ -2,7 +2,7 @@ import type { TabItem } from "../commonComponent/tabs/Tabs";
 
 export const tabItems: TabItem[] = [
   {
-    key: "home",
+    id: "home",
     label: "home",
     content: (
       <div>
@@ -12,7 +12,7 @@ export const tabItems: TabItem[] = [
     ),
   },
   {
-    key: "about",
+    id: "about",
     label: "about",
     content: (
       <div>
@@ -22,7 +22,7 @@ export const tabItems: TabItem[] = [
     ),
   },
   {
-    key: "account",
+    id: "account",
     label: "account",
     content: (
       <div>

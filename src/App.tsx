@@ -87,17 +87,23 @@ function App() {
       <div className="app__tab">
         <h2>Common Tabs Component</h2>
         <h2>Default tabs component</h2>
-        <Tabs tabs={tabItems} defaultActivetab="home" />
+        <Tabs
+          tabs={tabItems}
+          defaultActiveTab={"home"}
+          rightComponent={
+            <button className="date-range-button">From Date - To Date</button>
+          }
+        />
         <h2>Tabs with Header style change</h2>
         <Tabs
           tabs={tabItems}
-          defaultActivetab="home"
+          defaultActiveTab={"home"}
           tabHeaderClassName="classHeader"
         />
         <h2>Tabs with Content style change</h2>
         <Tabs
           tabs={tabItems}
-          defaultActivetab="home"
+          defaultActiveTab={"home"}
           tabContentClassName="classContent"
         />
       </div>
