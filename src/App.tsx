@@ -8,7 +8,8 @@ import Form from "./commonComponent/form/Form";
 import Tabs from "./commonComponent/tabs/Tabs";
 import { tabItems } from "./data/tabsData";
 import Dropdown from "./commonComponent/dropdown/Dropdown";
-import { menuItems } from "./commonComponent/dropdown/DropdownItem";
+import { menuItems, menuItems2 } from "./commonComponent/dropdown/DropdownItem";
+import BaseDropdown from "./commonComponent/dropdown/BaseDropdown/BaseDropdown";
 
 function App() {
   return (
@@ -99,7 +100,7 @@ function App() {
         <h2>Tabs with Header style change</h2>
         <Tabs
           tabs={tabItems}
-          defaultActiveTab={"home"}
+          defaultActiveTab={"about"}
           tabHeaderClassName="classHeader"
         />
         <h2>Tabs with Content style change</h2>
@@ -109,8 +110,8 @@ function App() {
           tabContentClassName="classContent"
         />
       </div>
+      <h2>Dropdown Component</h2>
       <div className="app__dropdown">
-        <h2>Dropdown Component</h2>
         <Dropdown
           trigger={
             <div className="dropdownTrigger">
@@ -119,8 +120,51 @@ function App() {
             </div>
           }
           items={menuItems}
+          position={"top-end"}
         />
+        <Dropdown
+          trigger={
+            <div className="dropdownTrigger">
+              <FaUserCircle size={32} />
+              <span>Dropdown with custom menu</span>
+            </div>
+          }
+          closeOnInsideClick={false}
+          closeOnOutsideClick={false}
+          items={menuItems2}
+          position={"bottom-start"}
+        />
+        <BaseDropdown
+          trigger={
+            <div className="dropdownTrigger">
+              <FaUserCircle size={32} />
+              <span>Dropdown with custom menu</span>
+            </div>
+          }
+          position={"top-start"}
+        >
+          {() => (
+            <h2>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+              laoreet ligula nibh. Duis et ante diam. Duis mattis sit amet
+            </h2>
+          )}
+        </BaseDropdown>
       </div>
+      <h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet
+        ligula nibh. Duis et ante diam. Duis mattis sit amet libero et dictum.
+        Nulla facilisi. Aliquam elit mauris, volutpat id massa et, bibendum
+        egestas arcu. Nulla lobortis risus vel nisi maximus, quis scelerisque
+        nunc eleifend. Pellentesque id ligula gravida, eleifend dolor in, semper
+        elit. Suspendisse finibus efficitur lacus in vestibulum. In mi ante,
+        tincidunt vitae finibus at, rhoncus at massa. Ut ut tellus mattis,
+        ornare justo vel, tincidunt urna. Fusce vitae justo sit amet sem
+        dignissim ullamcorper. Etiam elementum tellus egestas congue rhoncus. In
+        lacinia dui egestas tellus vestibulum interdum. Phasellus mollis eros
+        felis et aliquet semper. Nulla malesuada augue ut imperdiet tincidunt.
+        Quisque nec eleifend purus, et mattis justo. Phasellus bibendum, mauris
+      </h2>
     </div>
   );
 }

@@ -1,60 +1,60 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { type ReactNode } from "react";
 import "./dropdown.scss";
+import BaseDropdown, {
+  type DropdownPosition,
+} from "./BaseDropdown/BaseDropdown";
 
 export interface DropdownMenuItem {
   id: string;
-  content: React.ReactNode;
+  content: ReactNode;
+  onClick?: () => void;
 }
-
 interface DropdownProps {
-  trigger: React.ReactNode;
+  trigger: ReactNode;
   items: DropdownMenuItem[];
-  onSelect?: (id: string) => void;
+  position?: DropdownPosition;
+  closeOnInsideClick?: boolean;
+  closeOnOutsideClick?: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ trigger, items, onSelect }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(e.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClick);
-      return () => document.removeEventListener("mousedown", handleClick);
-    }
-  }, [isOpen]);
-
+const Dropdown: React.FC<DropdownProps> = ({
+  trigger,
+  items,
+  position = "bottom-center",
+  closeOnInsideClick = true,
+  closeOnOutsideClick,
+}) => {
   const handleItemClick = (id: string) => {
-    onSelect?.(id);
-    setIsOpen(false);
+    const item = items.find((i) => i.id === id);
+    if (item?.onClick) {
+      item.onClick();
+    }
   };
 
   return (
-    <div className="dropdown" ref={dropdownRef}>
-      <div className="dropdown__trigger" onClick={() => setIsOpen(!isOpen)}>
-        {trigger}
-      </div>
-      {isOpen && (
-        <div className="dropdown__menu">
-          {items.map((item) => (
+    <div className="dropdown">
+      <BaseDropdown
+        trigger={trigger}
+        position={position}
+        closeOnOutsideClick={closeOnOutsideClick}
+      >
+        {(_isOpen, { closeDropdown }) =>
+          items.map((item) => (
             <div
               key={item.id}
               className="dropdown-item"
-              onClick={() => handleItemClick(item.id)}
+              onClick={() => {
+                handleItemClick(item.id);
+                if (closeOnInsideClick) {
+                  closeDropdown();
+                }
+              }}
             >
               {item.content}
             </div>
-          ))}
-        </div>
-      )}
+          ))
+        }
+      </BaseDropdown>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, type ReactNode, useEffect } from "react";
+import React, { useState, type ReactNode } from "react";
 import "./tabs.scss";
 
 export interface TabItem {
@@ -18,7 +18,7 @@ interface TabsProps {
 
 const Tabs: React.FC<TabsProps> = ({
   tabs,
-  defaultActiveTab = "",
+  defaultActiveTab,
   tabHeaderClassName = "",
   activeTabClassName = "",
   tabContentClassName = "",
@@ -33,17 +33,6 @@ const Tabs: React.FC<TabsProps> = ({
   };
 
   const [activeIndex, setActiveIndex] = useState<number>(getInitialIndex());
-
-  useEffect(() => {
-    if (typeof defaultActiveTab === "number") {
-      setActiveIndex(defaultActiveTab);
-    } else {
-      const index = tabs.findIndex((tab) => tab.id === defaultActiveTab);
-      if (index !== -1) {
-        setActiveIndex(index);
-      }
-    }
-  }, [defaultActiveTab, tabs]);
 
   return (
     <div className="tabs">
