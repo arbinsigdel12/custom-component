@@ -113,20 +113,20 @@ function App() {
       <h2>Dropdown Component</h2>
       <div className="app__dropdown">
         <Dropdown
+          dropdownClassname="component__dropdown"
           trigger={
             <div className="dropdownTrigger">
               <FaUserCircle size={32} />
-              <span>View Dropdown</span>
             </div>
           }
           items={menuItems}
-          position={"top-end"}
+          position={"bottom-start"}
         />
         <Dropdown
           trigger={
             <div className="dropdownTrigger">
               <FaUserCircle size={32} />
-              <span>Dropdown with custom menu</span>
+              <span>Dropdown with closeOnClick false</span>
             </div>
           }
           closeOnInsideClick={false}
@@ -138,16 +138,25 @@ function App() {
           trigger={
             <div className="dropdownTrigger">
               <FaUserCircle size={32} />
-              <span>Dropdown with custom menu</span>
+              <span>Dropdown Base Prop</span>
             </div>
           }
-          position={"top-start"}
+          position={"bottom-center"}
         >
           {() => (
-            <h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              laoreet ligula nibh. Duis et ante diam. Duis mattis sit amet
-            </h2>
+            <div>
+              <span>Can add other component and apply positioning</span>
+              <Dropdown
+                trigger={
+                  <div className="dropdownTrigger">
+                    <FaUserCircle size={32} />
+                    <span>Normal Dropdown</span>
+                  </div>
+                }
+                items={menuItems}
+                position={"top-end"}
+              />
+            </div>
           )}
         </BaseDropdown>
       </div>

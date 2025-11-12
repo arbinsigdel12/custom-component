@@ -23,6 +23,7 @@ interface BaseDropdownProp {
   ) => ReactNode;
   position?: DropdownPosition;
   closeOnOutsideClick?: boolean;
+  dropdownClassname?: string;
 }
 
 const BaseDropdown: React.FC<BaseDropdownProp> = ({
@@ -30,6 +31,7 @@ const BaseDropdown: React.FC<BaseDropdownProp> = ({
   children,
   position,
   closeOnOutsideClick = true,
+  dropdownClassname,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -66,7 +68,7 @@ const BaseDropdown: React.FC<BaseDropdownProp> = ({
     }
   }, [closeOnOutsideClick, isOpen]);
   return (
-    <div className="baseDropdown" ref={dropdownRef}>
+    <div className={`baseDropdown ${dropdownClassname}`} ref={dropdownRef}>
       <div className="baseDropdown__trigger" onClick={toggleDropdown}>
         {trigger}
       </div>

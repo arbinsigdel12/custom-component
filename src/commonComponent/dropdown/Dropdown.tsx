@@ -15,6 +15,7 @@ interface DropdownProps {
   position?: DropdownPosition;
   closeOnInsideClick?: boolean;
   closeOnOutsideClick?: boolean;
+  dropdownClassname?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -23,6 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   position = "bottom-center",
   closeOnInsideClick = true,
   closeOnOutsideClick,
+  dropdownClassname,
 }) => {
   const handleItemClick = (id: string) => {
     const item = items.find((i) => i.id === id);
@@ -34,6 +36,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className="dropdown">
       <BaseDropdown
+        dropdownClassname={dropdownClassname}
         trigger={trigger}
         position={position}
         closeOnOutsideClick={closeOnOutsideClick}

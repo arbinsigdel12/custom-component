@@ -93,16 +93,22 @@
     gap: 10px;
     flex-direction: row;
     justify-content: space-between;
-
-    .dropdownTrigger {
-      border: 2px solid #ddd;
-      border-radius: 10px;
-      display: flex;
-      padding: 5px;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 20px;
-      padding-right: 10px;
+    .baseDropdown {
+      &.component__dropdown {
+        .baseDropdown__menu {
+          min-width: 300px;
+        }
+      }
+      .dropdownTrigger {
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        display: flex;
+        padding: 5px;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        padding-right: 10px;
+      }
     }
   }
 }

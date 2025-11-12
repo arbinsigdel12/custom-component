@@ -3,42 +3,29 @@ import type { DropdownMenuItem } from "./Dropdown";
 
 export const menuItems: DropdownMenuItem[] = [
   {
-    id: "home",
-    content: <span>Home</span>,
+    id: "1",
+    content: <span>Redirects on click</span>,
     onClick() {
       alert("navigate to home page");
     },
   },
   {
-    id: "about",
-    content: <span>About</span>,
-    onClick() {
-      alert("navigate to alert page");
-    },
+    id: "2",
+    content: <span>Closes dropdown on click (on Menu or outside)</span>,
   },
   {
-    id: "logout",
-    content: <button className="buttonMenu">Logout</button>,
+    id: "closes dropdown on Outside click",
+    content: <Button variant="primary" label="can add any component" />,
   },
 ];
 
 export const menuItems2: DropdownMenuItem[] = [
   {
     id: "home",
-    content: <span>Home</span>,
+    content: <span>does not close on Inside click</span>,
   },
   {
     id: "about",
-    content: <span>About</span>,
-  },
-  {
-    id: "logout",
-    content: <Button label="Logout" variant="primary" labelAppend="👍" />,
-  },
-  {
-    id: "loader",
-    content: (
-      <Button label="" variant="primary" isloading={true} loaderType="dots" />
-    ),
+    content: <span>does not close on Outside click</span>,
   },
 ];
