@@ -1,5 +1,5 @@
-import Button from "../button/Button";
-import type { DropdownMenuItem } from "./Dropdown";
+import Button from "../commonComponent/button/Button";
+import type { DropdownMenuItem } from "../commonComponent/dropdown/Dropdown";
 
 export const menuItems: DropdownMenuItem[] = [
   {

@@ -8,11 +8,12 @@ import Form from "./commonComponent/form/Form";
 import Tabs from "./commonComponent/tabs/Tabs";
 import { tabItems } from "./data/tabsData";
 import Dropdown from "./commonComponent/dropdown/Dropdown";
-import { menuItems, menuItems2 } from "./commonComponent/dropdown/DropdownItem";
+import { menuItems, menuItems2 } from "./data/DropdownItem";
 import BaseDropdown from "./commonComponent/dropdown/BaseDropdown/BaseDropdown";
 import Tooltip from "./commonComponent/tooltip/Tooltip";
 import { toolItem1, toolItem2 } from "./commonComponent/tooltip/TooltipItem";
 import { CiCircleInfo } from "react-icons/ci";
+import Modal from "./commonComponent/modal/Modal";
 
 function App() {
   return (
@@ -177,6 +178,171 @@ function App() {
           trigger={<CiCircleInfo />}
           position="top-start"
         />
+      </div>
+      <h2>Custom Modal</h2>
+      <div className="app__modal">
+        <Modal
+          trigger={<h2>Normal Modal</h2>}
+          heading={<h2>This is a modal component</h2>}
+        >
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            deleniti officia quas dignissimos labore consequuntur similique
+            quisquam facilis nulla molestiae repellat praesentium iure inventore
+            quaerat sed recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.
+          </span>
+        </Modal>
+        <Modal trigger={<h2>Modal with no header</h2>}>
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            deleniti officia quas dignissimos labore consequuntur similique
+            quisquam facilis nulla molestiae repellat praesentium iure inventore
+            quaerat sed recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.
+          </span>
+        </Modal>
+        <Modal
+          trigger={<h2>Modal with no header nor close button</h2>}
+          hideCloseBtn
+        >
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            deleniti officia quas dignissimos labore consequuntur similique
+            quisquam facilis nulla molestiae repellat praesentium iure inventore
+            quaerat sed recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.
+          </span>
+        </Modal>
       </div>
     </div>
   );

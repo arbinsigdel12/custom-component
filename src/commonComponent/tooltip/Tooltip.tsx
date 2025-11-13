@@ -56,11 +56,7 @@ const Tooltip: React.FC<TooltipProp> = ({
         >
           <div className="toolTip__menu__itemsContainer">
             {items.map((item) => (
-              <div
-                key={item.id}
-                className="toolTip__item"
-                // onMouseLeave={!isInteractive ? handleClose : undefined}
-              >
+              <div key={item.id} className="toolTip__item">
                 {item.content}
               </div>
             ))}
