@@ -1,0 +1,67 @@
+.toolTip {
+  display: inline-block;
+  position: relative;
+
+  &__trigger {
+    cursor: pointer;
+  }
+
+  &__menu {
+    position: absolute;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    z-index: 1000;
+
+    &__itemsContainer {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &.top-start {
+      bottom: 100%;
+      left: 0;
+    }
+
+    &.top-center {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.top-end {
+      bottom: 100%;
+      right: 0;
+    }
+
+    &.bottom-start {
+      top: 100%;
+      left: 0;
+    }
+
+    &.bottom-center {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.bottom-end {
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+    }
+  }
+  &__item {
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}

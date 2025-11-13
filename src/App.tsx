@@ -10,6 +10,9 @@ import { tabItems } from "./data/tabsData";
 import Dropdown from "./commonComponent/dropdown/Dropdown";
 import { menuItems, menuItems2 } from "./commonComponent/dropdown/DropdownItem";
 import BaseDropdown from "./commonComponent/dropdown/BaseDropdown/BaseDropdown";
+import Tooltip from "./commonComponent/tooltip/Tooltip";
+import { toolItem1, toolItem2 } from "./commonComponent/tooltip/TooltipItem";
+import { CiCircleInfo } from "react-icons/ci";
 
 function App() {
   return (
@@ -160,20 +163,21 @@ function App() {
           )}
         </BaseDropdown>
       </div>
-      <h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet
-        ligula nibh. Duis et ante diam. Duis mattis sit amet libero et dictum.
-        Nulla facilisi. Aliquam elit mauris, volutpat id massa et, bibendum
-        egestas arcu. Nulla lobortis risus vel nisi maximus, quis scelerisque
-        nunc eleifend. Pellentesque id ligula gravida, eleifend dolor in, semper
-        elit. Suspendisse finibus efficitur lacus in vestibulum. In mi ante,
-        tincidunt vitae finibus at, rhoncus at massa. Ut ut tellus mattis,
-        ornare justo vel, tincidunt urna. Fusce vitae justo sit amet sem
-        dignissim ullamcorper. Etiam elementum tellus egestas congue rhoncus. In
-        lacinia dui egestas tellus vestibulum interdum. Phasellus mollis eros
-        felis et aliquet semper. Nulla malesuada augue ut imperdiet tincidunt.
-        Quisque nec eleifend purus, et mattis justo. Phasellus bibendum, mauris
-      </h2>
+      <h2>Custom Tooltip</h2>
+      <div className="app__tooltip">
+        <Tooltip
+          items={toolItem1}
+          trigger={<CiCircleInfo />}
+          position="top-start"
+        />
+        <Tooltip
+          offset="1rem"
+          isInteractive={true}
+          items={toolItem2}
+          trigger={<CiCircleInfo />}
+          position="top-start"
+        />
+      </div>
     </div>
   );
 }

@@ -96,7 +96,7 @@
     .baseDropdown {
       &.component__dropdown {
         .baseDropdown__menu {
-          min-width: 300px;
+          min-width: 280px;
         }
       }
       .dropdownTrigger {
@@ -110,5 +110,11 @@
         padding-right: 10px;
       }
     }
+  }
+  &__tooltip {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
   }
 }
