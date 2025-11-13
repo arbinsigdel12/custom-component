@@ -1,9 +1,11 @@
 .form {
   border: 5px solid #75afe6;
   border-radius: 10px;
-  width: 450px;
-  margin: auto;
+  max-width: 450px;
+  width: 100%;
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -23,26 +25,29 @@
   &__inputField {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     padding-bottom: 20px;
 
     &__nameField {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
     }
     &__emailField {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
     }
     &__passwordField {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
     }
     &__radioField {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       p {
         font-size: 16px;
@@ -51,12 +56,14 @@
       }
       &__radioOptions {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: flex-start;
         gap: 20px;
 
         .input {
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           flex-direction: row-reverse;
           &__inputField {

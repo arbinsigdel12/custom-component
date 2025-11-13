@@ -41,6 +41,7 @@ const Modal: React.FC<ModalProp> = ({
     }
   }, [isOpen]);
 
+  //Hide scroll bar of body on modal open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";

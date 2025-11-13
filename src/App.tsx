@@ -93,7 +93,7 @@ function App() {
       </div>
       <div className="app__tab">
         <h2>Common Tabs Component</h2>
-        <h2>Default tabs component</h2>
+        <h3>Default tabs component</h3>
         <Tabs
           tabs={tabItems}
           defaultActiveTab={"home"}
@@ -101,13 +101,13 @@ function App() {
             <button className="date-range-button">From Date - To Date</button>
           }
         />
-        <h2>Tabs with Header style change</h2>
+        <h3>Tabs with Header style change</h3>
         <Tabs
           tabs={tabItems}
           defaultActiveTab={"about"}
           tabHeaderClassName="classHeader"
         />
-        <h2>Tabs with Content style change</h2>
+        <h3>Tabs with Content style change</h3>
         <Tabs
           tabs={tabItems}
           defaultActiveTab={"home"}
@@ -168,21 +168,41 @@ function App() {
       <div className="app__tooltip">
         <Tooltip
           items={toolItem1}
-          trigger={<CiCircleInfo />}
+          trigger={
+            <div className="tooltipTrigger">
+              <span>Tooltip with no interaction</span>
+              <CiCircleInfo />
+            </div>
+          }
           position="top-start"
         />
         <Tooltip
           offset="1rem"
           isInteractive={true}
           items={toolItem2}
-          trigger={<CiCircleInfo />}
+          trigger={
+            <div className="tooltipTrigger">
+              <span>Tooltip with interaction</span>
+              <CiCircleInfo />
+            </div>
+          }
           position="top-start"
         />
+        <div className="tooltipTrigger">
+          <span>Tooltip with only icon as trigger</span>
+          <Tooltip
+            offset="1rem"
+            isInteractive={true}
+            items={toolItem2}
+            trigger={<CiCircleInfo />}
+            position="top-start"
+          />
+        </div>
       </div>
       <h2>Custom Modal</h2>
       <div className="app__modal">
         <Modal
-          trigger={<h2>Normal Modal</h2>}
+          trigger={<span>Normal Modal</span>}
           heading={<h2>This is a modal component</h2>}
         >
           <span>
@@ -236,7 +256,7 @@ function App() {
             recusandae, ullam eaque. Dolorem.
           </span>
         </Modal>
-        <Modal trigger={<h2>Modal with no header</h2>}>
+        <Modal trigger={<span>Modal with no header</span>}>
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
             deleniti officia quas dignissimos labore consequuntur similique
@@ -289,7 +309,7 @@ function App() {
           </span>
         </Modal>
         <Modal
-          trigger={<h2>Modal with no header nor close button</h2>}
+          trigger={<span>Modal with no header nor close button</span>}
           hideCloseBtn
         >
           <span>

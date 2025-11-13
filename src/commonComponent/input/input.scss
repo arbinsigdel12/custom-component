@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 5px;
+  gap: 2.5px;
   &__label {
     display: flex;
     flex-direction: row;
@@ -12,17 +12,20 @@
   span {
     color: red;
   }
-
-  input {
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    &.input--error {
-      border-color: red;
-      outline: none;
-
-      &:focus {
+  &__inputField {
+    width: 100%;
+    input {
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+      &.input--error {
         border-color: red;
+        outline: none;
+
+        &:focus {
+          border-color: red;
+        }
       }
     }
   }
@@ -35,6 +38,7 @@
 
 .radio {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 10px;
   &__label {
@@ -45,10 +49,13 @@
   }
   &__options {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     gap: 20px;
     .radio__option {
       display: flex;
+      flex-wrap: wrap;
+      white-space: nowrap;
       justify-content: flex-start;
       gap: 5px;
       align-items: center;
