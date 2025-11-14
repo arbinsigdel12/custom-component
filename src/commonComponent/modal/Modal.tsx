@@ -2,20 +2,27 @@ import React, { useEffect, useRef, useState, type ReactNode } from "react";
 import "./model.scss";
 import { IoIosCloseCircle } from "react-icons/io";
 
-interface ModalProp {
+export interface ActionItem {
+  label: React.ReactNode;
+  onClick: () => void;
+}
+
+export interface ModalProp {
   trigger: ReactNode;
   children: ReactNode;
   hideCloseBtn?: boolean;
   heading?: ReactNode;
   isBlur?: boolean;
+  actions?: ActionItem[];
 }
 
-const Modal: React.FC<ModalProp> = ({
+const BaseModal: React.FC<ModalProp> = ({
   trigger,
   children,
   hideCloseBtn = false,
   heading,
   isBlur = true,
+  actions,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -69,6 +76,7 @@ const Modal: React.FC<ModalProp> = ({
                 heading
                   ? {
                       backgroundColor: "#fff",
+                      borderBottom: "1px solid #eee",
                     }
                   : { backgroundColor: "transparent" }
               }
@@ -86,6 +94,22 @@ const Modal: React.FC<ModalProp> = ({
             >
               {children}
             </div>
+            {actions && (
+              <div className="modal__action">
+                {actions.map((action, index) => (
+                  <div
+                    key={index}
+                    className="modal__action__Button"
+                    onClick={() => {
+                      action.onClick();
+                      handleClose();
+                    }}
+                  >
+                    {action.label}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -93,4 +117,4 @@ const Modal: React.FC<ModalProp> = ({
   );
 };
 
-export default Modal;
+export default BaseModal;

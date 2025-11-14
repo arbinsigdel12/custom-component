@@ -56,6 +56,16 @@
       }
     }
   }
+  &__action {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 10px;
+    &__delete {
+      background-color: #e63946;
+    }
+  }
   &__heading {
     position: sticky;
     display: flex;

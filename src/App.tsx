@@ -14,6 +14,7 @@ import Tooltip from "./commonComponent/tooltip/Tooltip";
 import { toolItem1, toolItem2 } from "./commonComponent/tooltip/TooltipItem";
 import { CiCircleInfo } from "react-icons/ci";
 import Modal from "./commonComponent/modal/Modal";
+import { modalAction } from "./commonComponent/modal/modalAction";
 
 function App() {
   return (
@@ -204,6 +205,7 @@ function App() {
         <Modal
           trigger={<span>Normal Modal</span>}
           heading={<h2>This is a modal component</h2>}
+          actions={modalAction}
         >
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
