@@ -258,7 +258,10 @@ function App() {
             recusandae, ullam eaque. Dolorem.
           </span>
         </Modal>
-        <Modal trigger={<span>Modal with no header</span>}>
+        <Modal
+          trigger={<span>Modal with no header</span>}
+          actions={modalAction}
+        >
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
             deleniti officia quas dignissimos labore consequuntur similique
@@ -311,9 +314,62 @@ function App() {
           </span>
         </Modal>
         <Modal
+          actions={modalAction}
           trigger={<span>Modal with no header nor close button</span>}
           hideCloseBtn
         >
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            deleniti officia quas dignissimos labore consequuntur similique
+            quisquam facilis nulla molestiae repellat praesentium iure inventore
+            quaerat sed recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Assumenda deleniti officia quas
+            dignissimos labore consequuntur similique quisquam facilis nulla
+            molestiae repellat praesentium iure inventore quaerat sed
+            recusandae, ullam eaque. Dolorem.
+          </span>
+        </Modal>
+        <Modal trigger={<span>Modal with no Action</span>} hideCloseBtn>
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
             deleniti officia quas dignissimos labore consequuntur similique
